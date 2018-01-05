@@ -13,13 +13,21 @@ This is a simple server that allows you to connect your Broadlink (tested with t
 After installing the dependencies, run ```npm start``` to initialize the server. You will see in the console your Broadlink IP address, we will use it later.
 
 # Learn some IR codes
-Open the RM Bridge app and start the service, then, navigate to: http://rm-bridge.fun2code.de/rm_manage/code_learning.html
+Exec following command and point your remote to the Broadlink, press the button you want to learn.
 
-Configure the website with your RM Bridge IP and PORT and click Load devices. If you can't find your device you will need to manually add it using the *Add manually* option. Google how to get the MAC Address from the IP you got when running the server.
+```
+node learncode.js
+```
 
-Once added, click on Learn Code and point your remote to the Broadlink, press the button you want to learn. You will get a JSON with the details to run this code, copy the *data* value (this is a HEX of the IR code you just sent to the Broadlink).
+You will get a "learned hex code".
 
-Modify the *commands.js* file with this code (follow the instructions there).
+Modify the *commands.json* file with "learned hex code" (follow the instructions *commands.js*).
+
+You can test the modified *commands.json* with following command.
+
+```
+node oneshot.js $Commad
+```
 
 ## Ngrok
 In order to connect IFTTT to the PC/server running this code (like a Raspberry Pi), you will need a URL that tunnels to your device, this is done with ngrok. 

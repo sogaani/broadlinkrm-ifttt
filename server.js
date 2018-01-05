@@ -6,8 +6,6 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
-const uuid = require('uuid/v4');
-const request = require('request');
 
 /* Setup */
 const commands = require('./commands');
