@@ -17,7 +17,7 @@ const discoverDevices = (count = 0) => {
     return;
   }
 
-  broadlink.discover();
+  broadlink.discover(28280,28281);
   count++;
 
   setTimeout(() => {

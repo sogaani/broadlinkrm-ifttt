@@ -5,13 +5,13 @@
     "author": "jor3l",
     "license": "ISC",
     "dependencies": {
-        "express": "latest",
-        "lodash": "latest",
-        "cors": "latest",
         "body-parser": "latest",
-        "request": "latest",
+        "broadlinkjs-rm": "github:sogaani/broadlinkjs-rm",
+        "cors": "latest",
+        "express": "latest",
         "helmet": "latest",
-        "broadlinkjs-rm": "latest",
+        "lodash": "latest",
+        "request": "latest",
         "uuid": "latest"
     }
 }
