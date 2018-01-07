@@ -1,6 +1,8 @@
 // from: https://raw.githubusercontent.com/lprhodes/homebridge-broadlink-rm/master/helpers/getDevice.js
 const BroadlinkJS = require('broadlinkjs-rm');
 const broadlink = new BroadlinkJS()
+const CONFIG_FILE = __dirname + '/config.json';
+const config = require(CONFIG_FILE);
 
 const discoveredDevices = {};
 
@@ -17,7 +19,7 @@ const discoverDevices = (count = 0) => {
     return;
   }
 
-  broadlink.discover(28280,28281);
+  broadlink.discover(config.lport1, config.lport1, config.destaddr);
   count++;
 
   setTimeout(() => {

@@ -1,5 +1,6 @@
 "use strict";
-const PORT = process.env.PORT || 1880;
+const CONFIG_FILE = __dirname + '/config.json';
+const config = require(CONFIG_FILE);
 
 /* Modules */
 const express = require('express');
@@ -71,5 +72,5 @@ app.post('/command/:name', function(req, res) {
     }
 });
 
-app.listen(PORT);
-console.log('Server running, go to http://localhost:' + PORT);
+app.listen(config.port);
+console.log('Server running, go to http://localhost:' + config.port);
